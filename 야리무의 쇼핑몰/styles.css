@@ -1,0 +1,86 @@
+header {
+    width: 100%;
+    background-color: lightpink;
+    position: sticky;
+    padding-top: 10px;
+    padding-bottom: 0px;
+    margin-bottom: 20px;
+    top:0;
+    border-bottom: 1px solid wheat;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.burger div{
+    display:flex;
+    justify-self:last baseline;
+    width: 25px;
+    height: 3px;
+    background-color: gray;
+    margin: 3px;
+
+}
+
+footer{
+    
+    display: flex;
+    justify-content: center;
+    border-top: 1px solid beige;
+
+}
+
+
+.bebe_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.pot_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.shadow_wrapper{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#base_img_wrapper{
+    display: flex;
+   
+}
+
+#eye_img_wrapper{
+    display: flex;
+}
+    
+
+#color_img_wrapper{
+    display: flex;
+}
+
+main{
+    margin-left: 10rem;
+}
+
+nav{
+    padding-left: 20px;
+    position: fixed;
+}
+
+p{
+    margin-block-end: 4px;
+    margin-block-start: 4px;
+}
+
+.all{
+    display: flex;
+}
