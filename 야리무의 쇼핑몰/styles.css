@@ -1,10 +1,13 @@
+body {
+  position: relative;
+}
+
 header {
-  width: 100%;
+  width: 100vw;
   height: 10px;
   background-color: lightpink;
   position: fixed;
   padding-top: 10px;
-  padding-bottom: 0px;
   margin-bottom: 20px;
   border-bottom: 1px solid wheat;
   display: flex;
@@ -12,12 +15,8 @@ header {
   align-items: center;
 }
 
-.burger div {
-  display: flex;
-  width: 25px;
-  height: 3px;
-  background-color: gray;
-  margin: 3px;
+li {
+  list-style-type: none;
 }
 
 footer {
@@ -26,21 +25,7 @@ footer {
   border-top: 1px solid beige;
 }
 
-.bebe_wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.pot_wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
-.shadow_wrapper {
+.item_wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -73,7 +58,7 @@ nav {
   flex-direction: column;
   padding-left: 20px;
   position: fixed;
-  margin-top: 10rem;
+  top: 10rem;
 }
 
 p {
@@ -81,10 +66,14 @@ p {
   margin-block-start: 4px;
 }
 
-.title {
+.section_title {
   padding: 30px;
 }
 
-section {
+#all {
   display: flex;
+}
+
+.item_wrapper {
+  float: left;
 }
