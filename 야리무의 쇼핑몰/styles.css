@@ -3,16 +3,15 @@ body {
 }
 
 header {
-  width: 100vw;
-  height: 10px;
-  background-color: lightpink;
-  position: fixed;
-  padding-top: 10px;
-  margin-bottom: 20px;
-  border-bottom: 1px solid wheat;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100vh;
+  height: 1rem;
+  margin-bottom: 20px;
+  border-bottom: 1px solid wheat;
+  background-color: lightpink;
+  position: fixed;
 }
 
 li {
@@ -50,7 +49,7 @@ main {
   display: flex;
   flex-direction: column;
   margin-left: 10rem;
-  padding: 100px;
+  padding-right: 50rem;
 }
 
 nav {
@@ -76,4 +75,9 @@ p {
 
 .item_wrapper {
   float: left;
+}
+
+.product_img {
+  width: 100px;
+  height: 100px;
 }
