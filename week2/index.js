@@ -1,3 +1,11 @@
+//홈이동
+const home = document.querySelector(".fa-heart-circle-plus");
+const homeClickHandler = () => {
+  const goHome = "index.html";
+  location.href = goHome;
+};
+home.addEventListener("click", homeClickHandler);
+
 //초기 리스트
 const ITEMS_LIST = [
   {
@@ -105,3 +113,85 @@ const allItem = function () {
 };
 
 allItem();
+
+//베이스 필터링
+const baseSection = document.querySelector(".section");
+
+const filterBase = function () {
+  const BASE_LIST = ITEMS_LIST.filter((item) => {
+    return item.category == "base";
+  });
+
+  const BASE_LIST_Info = BASE_LIST.map((item) => {
+    return `
+        <article class="item">
+            <img src="${item.Image}" alt="${item.name}">
+            <button class="fa-solid fa-heart" type="button"></button>
+            <h3>${item.name}</h3>
+            <p>${item.price}원</p>
+        </article>
+        `;
+  });
+  baseSection.innerHTML = BASE_LIST_Info.join("");
+};
+
+//아이 필터링
+const eyeSection = document.querySelector(".section");
+
+const filterEye = function () {
+  const EYE_LIST = ITEMS_LIST.filter((item) => {
+    return item.category == "eye";
+  });
+
+  const EYE_LIST_Info = EYE_LIST.map((item) => {
+    return `
+        <article class="item">
+            <img src="${item.Image}" alt="${item.name}">
+            <button class="fa-solid fa-heart" type="button"></button>
+            <h3>${item.name}</h3>
+            <p>${item.price}원</p>
+        </article>
+        `;
+  });
+  eyeSection.innerHTML = EYE_LIST_Info.join("");
+};
+
+//색조 필터링
+const colorSection = document.querySelector(".section");
+
+const filterColor = function () {
+  const COLOR_LIST = ITEMS_LIST.filter((item) => {
+    return item.category == "color";
+  });
+
+  const COLOR_LIST_Info = COLOR_LIST.map((item) => {
+    return `
+        <article class="item">
+            <img src="${item.Image}" alt="${item.name}">
+            <button class="fa-solid fa-heart" type="button"></button>
+            <h3>${item.name}</h3>
+            <p>${item.price}원</p>
+        </article>
+        `;
+  });
+  colorSection.innerHTML = COLOR_LIST_Info.join("");
+};
+
+//클릭하면 작동하기
+const navBtnAll = document.querySelector(".nav_all");
+const navBtnBase = document.querySelector(".nav_base");
+const navBtnEye = document.querySelector(".nav_eye");
+const navBtnColor = document.querySelector(".nav_color");
+
+navBtnAll.addEventListener("click", () => {
+  allItem();
+});
+navBtnBase.addEventListener("click", () => {
+  filterBase();
+});
+navBtnEye.addEventListener("click", () => {
+  filterEye();
+});
+navBtnColor.addEventListener("click", () => {
+  filterColor();
+});
