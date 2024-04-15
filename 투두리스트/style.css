@@ -1,0 +1,106 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&family=Noto+Serif+KR&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Serif KR", serif;
+}
+
+main {
+  background-color: orange;
+  background: linear-gradient(to right top, orange, beige);
+  font-family: "Noto Sans KR", sans-serif;
+  font-optical-sizing: auto;
+}
+
+@keyframes sectionAnimation {
+  25% {
+    transform: scale(1.1);
+    transition: all 0.5s;
+  }
+  50% {
+    transform: scale(1);
+    transition: all 0.5s;
+  }
+  75% {
+    transform: scale(1.1);
+    transition: all 0.5s;
+  }
+}
+
+#to-do-box {
+  width: 300px;
+  margin: 100px 0px 0px 50px;
+}
+
+input {
+  font-size: 15px;
+  color: #222222;
+  width: 300px;
+  border: none;
+  border-bottom: solid #aaaaaa 1px;
+  padding: 0px 0px 10px 10px;
+  position: relative;
+  background: none;
+}
+
+input::placeholder {
+  color: #aaaaaa;
+}
+input:focus {
+  outline: none;
+}
+
+form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+button {
+  width: 66px;
+  height: 20px;
+}
+
+section {
+  display: inline-flex;
+}
+
+.오늘할일 {
+  width: 500px;
+  height: 40px;
+  border: 1px;
+  background-color: beige;
+  margin: 19px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+}
+
+.해야할일 {
+  width: 380px;
+  height: 200px;
+  border: 1px;
+  background-color: beige;
+  margin: 19px;
+  box-sizing: border-box;
+}
+
+.완료한일 {
+  width: 380px;
+  height: 200px;
+  border: 1px;
+  background-color: beige;
+  margin: 19px;
+  box-sizing: border-box;
+}
+
+li {
+  display: inline-block;
+  width: 200px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  animation: sectionAnimation 5s linear infinite;
+}
