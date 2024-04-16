@@ -107,6 +107,21 @@ nav {
   padding: 10px 10%;
 }
 
+.side_bar ul li a {
+  color: brown;
+  text-decoration: none;
+}
+
+.wishList:hover {
+  background-color: white;
+}
+.page:hover {
+  background-color: white;
+}
+.cart:hover {
+  background-color: white;
+}
+
 .hidden {
   display: none;
 }
