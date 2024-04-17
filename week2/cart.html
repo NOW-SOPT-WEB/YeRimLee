@@ -3,6 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cart.css" />
     <link rel="stylesheet" href="index.css" />
     <title>야리무의 쇼핑몰</title>
     <script
@@ -17,5 +18,35 @@
       <h1>장바구니 페이지</h1>
       <i class="fa-solid fa-bars"></i>
     </header>
+    <main>
+      <table>
+        <thead>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>상품정보</td>
+            <td>상품금액</td>
+            <td>카테고리</td>
+            <td>비고</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><input type="checkbox" /></td>
+            <td>파데</td>
+            <td>5000</td>
+            <td>베이스</td>
+            <td><button>삭제</button></td>
+          </tr>
+          <tr></tr>
+        </tbody>
+      </table>
+      <section>
+        <div class="cart_button">
+          <button>구매하기</button>
+          <button class="tohome">홈으로</button>
+        </div>
+      </section>
+    </main>
+    <script src="./cart.js"></script>
   </body>
 </html>
