@@ -1,0 +1,8 @@
+table {
+  padding: 6rem;
+}
+
+/* 카트 하단 버튼 가운데로 맞춰야함*/
+.cart_button {
+  padding: 10rem;
+}
