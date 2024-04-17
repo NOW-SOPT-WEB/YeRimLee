@@ -1,8 +1,29 @@
-table {
-  padding: 6rem;
+main {
+  padding-left: 0rem;
 }
 
-/* 카트 하단 버튼 가운데로 맞춰야함*/
+table {
+  padding: 8rem;
+  text-align: center;
+}
+
+.table_style {
+  width: 60rem;
+  max-height: 18rem;
+  margin: 10rem;
+  overflow-y: scroll;
+  margin-left: 0rem;
+}
+
+table td {
+  position: sticky;
+  top: 0rem;
+  width: 10rem;
+  height: 4rem;
+  background-color: wheat;
+}
+
 .cart_button {
-  padding: 10rem;
+  display: flex;
+  justify-content: center;
 }
