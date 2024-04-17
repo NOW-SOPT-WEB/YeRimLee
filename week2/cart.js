@@ -1,25 +1,11 @@
-//item 클릭시 장바구니에 담기 alert가 뜨고 yes 누르면 장바구니로 이동됨
-const item = document.querySelector(".section");
-const itemClickHandler = () => {
-  alert("장바구니 담기");
-  const cartPlus = "cart.html";
-  location.href = cartPlus;
+//홈버튼 클릭 시, 홈으로 이동
+const tohome = document.querySelector(".tohome");
+const tohomeClickHandler = () => {
+  const gotoHome = "index.html";
+  location.href = gotoHome;
 };
-item.addEventListener("click", itemClickHandler);
+tohome.addEventListener("click", tohomeClickHandler);
 
-//li 태그 만들어서 시작화면에 '전체' 추가
-//const all = document.createElement("h2");
-//all.textContent = "전체";
-
-//const itemList = document.querySelector(".item_list");
-
-//itemList.appendChild(all);
-
-//div 태그 만들어서 시작화면에 상품 나열
-//const all_list = document.createElement("div");
-
-//const imgBox = document.querySelector(".item_box");
-
-//imgBox.append("닥터자르트", 24000);
-//html꺼 태그 삭제함
-//연결 끊음
+//로컬스토리지를 이용해서 장바구니 담기 관련 로직 추가
+//로컬 스토리지를 통해서 담고, 뿌리기해야함
+//무엇을 선택하든, .secition 선택자로 선택해서 무엇을 고르든 담기기에 해야겠지?
