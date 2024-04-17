@@ -1,10 +1,12 @@
-//홈이동
-const home = document.querySelector(".fa-heart-circle-plus");
-const homeClickHandler = () => {
-  const goHome = "index.html";
-  location.href = goHome;
+//item 클릭시 장바구니에 담기 alert가 뜨고 yes 누르면
+//스토리지에 추가되고, 장바구니로 이동됨
+const item = document.querySelector(".section");
+const itemClickHandler = () => {
+  alert("장바구니 담기");
+  const cartPlus = "cart.html";
+  location.href = cartPlus;
 };
-home.addEventListener("click", homeClickHandler);
+item.addEventListener("click", itemClickHandler);
 
 //초기 리스트
 const ITEMS_LIST = [
@@ -114,7 +116,7 @@ const allItem = function () {
 
 allItem();
 
-//베이스 필터링
+//베이스 필터링//여기보고 한번더!!!
 const baseSection = document.querySelector(".section");
 
 const filterBase = function () {
