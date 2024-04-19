@@ -96,7 +96,7 @@ const allItem = function () {
             <img id=${item.id} src="${item.Image}" alt="${item.name}">
             <button class="fa-solid fa-heart" type="button"></button>
             <h3>${item.name}</h3>
-            <p>${item.price}원</p>
+            <p>${item.price.toLocaleString()}원</p>
           </article>
         `;
   });
@@ -117,7 +117,7 @@ function template() {
                 <div class="item_price">${formatPrice(item.price)}</div>
             </td>
             <td>
-                <div class="item_category">${item.price}원</div>
+                <div class="item_category">${item.price.toLocaleString()}원</div>
             </td>
             <td>
                 <div class="item_delete"><button>삭제</button></div>
@@ -138,7 +138,7 @@ const filterBase = function () {
             <img src="${item.Image}" alt="${item.name}">
             <button class="fa-solid fa-heart" type="button"></button>
             <h3>${item.name}</h3>
-            <p>${item.price}원</p>
+            <p>${item.price.toLocaleString()}원</p>
         </article>
         `;
   });
@@ -159,7 +159,7 @@ const filterEye = function () {
             <img src="${item.Image}" alt="${item.name}">
             <button class="fa-solid fa-heart" type="button"></button>
             <h3>${item.name}</h3>
-            <p>${item.price}원</p>
+            <p>${item.price.toLocaleString()}원</p>
         </article>
         `;
   });
