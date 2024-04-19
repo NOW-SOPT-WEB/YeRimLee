@@ -91,6 +91,7 @@ modal_page.appendChild(modal_purchaseBtn);
 //구매하기 버튼 클릭 시 장바구니 페이지로 돌아가기
 const checkoutModal = document.querySelector(".purchase_button");
 const modalBtnClickHandler = () => {
+  alert("구매가 완료되었습니다.");
   const outModal = "cart.html";
   location.href = outModal;
 };
