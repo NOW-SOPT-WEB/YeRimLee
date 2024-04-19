@@ -225,22 +225,5 @@ function addCart(event) {
     let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
     cartList.push(selectedItem);
     localStorage.setItem("cartList", JSON.stringify(cartList));
-
-    //가져온 정보 보여주기
-    // const showCart = document.querySelector(".wish_list");
-    // let showCartList = cartList.map((item) => {
-    //   return `
-    //     <tr>
-    //     <td><input type="checkbox"></td>
-    //     <td><img src="${item.Image}"></td>
-    //     <td>${item.name}/td>
-    //     <td>${item.price}</td>
-    //     <td>${item.category}</td>
-    //     <td><button>X</button></td>
-    //     </tr>
-    //     `;
-    // });
-    // showCart.innerHTML += showCartList.join("");
-    // console.log("showCart", showCart);
   }
 }
