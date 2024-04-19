@@ -4,7 +4,6 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="cart.css" />
-    <link rel="stylesheet" href="index.css" />
     <title>야리무의 쇼핑몰</title>
     <script
       src="https://kit.fontawesome.com/e126ff8299.js"
@@ -32,7 +31,7 @@
       </div>
     </aside>
     <main id="table_container" class="talbe_style">
-      <table>
+      <table class="cart_table">
         <thead>
           <tr>
             <td><input type="checkbox" /></td>
@@ -42,16 +41,8 @@
             <td>비고</td>
           </tr>
         </thead>
-        <tbody class="wish_list">
-          <tr>
-            <td><input type="checkbox" /></td>
-            <td class="item_name">파데</td>
-            <td class="item_price">5000</td>
-            <td class="item_category">베이스</td>
-            <td class="item_delete"><button>삭제</button></td>
-          </tr>
-          <tr></tr>
-        </tbody>
+        <!--여기다가 장바구니 리스트 불러 올 것-->
+        <tbody class="wish_list"></tbody>
       </table>
       <section>
         <div class="cart_button">
@@ -60,7 +51,8 @@
         </div>
       </section>
     </main>
-    <script src="./goToHome.js"></script>
-    <script src="./sidebar.js"></script>
+    <script type="module" src="./goToHomeCart.js"></script>
+    <script type="module" src="./sidebar.js"></script>
+    <script type="module" src="./cartPage.js"></script>
   </body>
 </html>

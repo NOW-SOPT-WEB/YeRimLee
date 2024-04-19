@@ -1,13 +1,3 @@
-//item 클릭시 장바구니에 담기 alert가 뜨고 yes 누르면
-//스토리지에 추가되고, 장바구니로 이동됨
-const item = document.querySelector(".section");
-const itemClickHandler = () => {
-  alert("장바구니 담기");
-  const cartPlus = "cart.html";
-  location.href = cartPlus;
-};
-item.addEventListener("click", itemClickHandler);
-
 //초기 리스트
 const ITEMS_LIST = [
   {
@@ -98,25 +88,43 @@ const ITEMS_LIST = [
 
 //전체회면에 표시
 
-const itemSection = document.querySelector(".section");
-
 const allItem = function () {
+  const itemSection = document.querySelector(".section");
   const itemCards = ITEMS_LIST.map((item) => {
     return `
-        <article class="item">
-            <img src="${item.Image}" alt="${item.name}">
+           <article class="item">
+            <img id=${item.id} src="${item.Image}" alt="${item.name}">
             <button class="fa-solid fa-heart" type="button"></button>
             <h3>${item.name}</h3>
             <p>${item.price}원</p>
-        </article>
+          </article>
         `;
   });
   itemSection.innerHTML = itemCards.join("");
 };
 
+function template() {
+  return `
+        <tr>
+          <td><input type="checkbox"></td>
+            <td>
+              <div class="item_name">
+                <img id="${item.id}" src="${item.Image}" alt="${item.name}">
+                <h3>${item.name}</h3>
+              </div>
+            </td>
+            <td>
+                <div class="item_price">${formatPrice(item.price)}</div>
+            </td>
+            <td>
+                <div class="item_category">${item.price}원</div>
+            </td>
+            <td>
+                <div class="item_delete"><button>삭제</button></div>
+            </td>`;
+}
 allItem();
-
-//베이스 필터링//여기보고 한번더!!!
+//베이스 필터링
 const baseSection = document.querySelector(".section");
 
 const filterBase = function () {
@@ -197,3 +205,42 @@ navBtnEye.addEventListener("click", () => {
 navBtnColor.addEventListener("click", () => {
   filterColor();
 });
+//여기서부터는 장바구니리스트에 담기!
+//상품에 클릭이 인식되면, 카트에 추가
+const items = document.querySelectorAll(".item");
+items.forEach((item) => {
+  item.addEventListener("click", addCart);
+});
+//상품에 추가 하는 로직 + 추가하시겠습니까? alert
+function addCart(event) {
+  const addCheck = confirm("장바구니에 추가하시겠습니까?");
+  if (addCheck) {
+    const cartPlus = "cart.html";
+    location.href = cartPlus; //여기가 이동!
+    const targetProduct = event.target.closest(".item");
+    const targetProductId = targetProduct.querySelector("img").id;
+    const selectedItem = ITEMS_LIST.find(
+      (item) => item.id.toString() === targetProductId
+    );
+    let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
+    cartList.push(selectedItem);
+    localStorage.setItem("cartList", JSON.stringify(cartList));
+
+    //가져온 정보 보여주기
+    // const showCart = document.querySelector(".wish_list");
+    // let showCartList = cartList.map((item) => {
+    //   return `
+    //     <tr>
+    //     <td><input type="checkbox"></td>
+    //     <td><img src="${item.Image}"></td>
+    //     <td>${item.name}/td>
+    //     <td>${item.price}</td>
+    //     <td>${item.category}</td>
+    //     <td><button>X</button></td>
+    //     </tr>
+    //     `;
+    // });
+    // showCart.innerHTML += showCartList.join("");
+    // console.log("showCart", showCart);
+  }
+}
