@@ -5,3 +5,10 @@ const tohomeClickHandler = () => {
   location.href = gotoHome;
 };
 tohome.addEventListener("click", tohomeClickHandler);
+//홈이동
+const home = document.querySelector(".fa-heart-circle-plus");
+const homeClickHandler = () => {
+  const goHome = "index.html";
+  location.href = goHome;
+};
+home.addEventListener("click", homeClickHandler);
