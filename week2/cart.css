@@ -76,8 +76,9 @@ header {
 .hidden {
   display: none;
 }
-
+/*장바구니 화면*/
 main {
+  height: 20rem;
   padding-left: 0rem;
 }
 
@@ -87,17 +88,20 @@ table {
 }
 
 .table_style {
-  width: 60rem;
-  max-height: 18rem;
   margin: 10rem;
-  overflow-y: scroll;
   margin-left: 0rem;
+}
+.table_box {
+  display: flex;
+  height: 35rem;
+  overflow: auto;
+}
+.cart_table {
+  width: 60rem;
 }
 
 table td {
   top: 0rem;
-  width: 10rem;
-  height: 4rem;
   background-color: wheat;
 }
 
