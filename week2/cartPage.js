@@ -55,13 +55,27 @@ function openModal() {
 
   let showCartList = cartList.map((item) => {
     return `
-       <img id=${item.id} class="modal_img" src="${item.Image}" alt="${item.name}">
-       <h3>${item.name}</h3>
-       <p>${item.price}원</p>
+       <img id=${item.id} class="modal_img" src="${item.Image}" alt="${
+      item.name
+    }">
+       <p>${item.name}</p>
+       <p>${item.price.toLocaleString()}원</p>
       `;
-    //여기에 구매하기 버튼 추가
   });
+  //여기서 총 금액 추가
+  let totalPrice = 0;
+
+  let modalCartList = JSON.parse(localStorage.getItem("cartList")) || [];
+  modalCartList.forEach((item) => {
+    totalPrice += item.price;
+  });
+
   showCart.innerHTML += showCartList.join("");
+  //모달에 구매금액 추가하기
+  const modal_totalPrice = document.createElement("p");
+  modal_totalPrice.textContent = "구매금액:" + totalPrice.toLocaleString();
+  const modal_box = document.querySelector(".modal_product_list_wrapper");
+  modal_box.appendChild(modal_totalPrice);
 }
 
 const purchaseBtn = document.querySelector(".purchase_btn");
@@ -69,12 +83,15 @@ purchaseBtn.addEventListener("click", openModal);
 
 //모달에 구매하기 버튼 추가하기
 const modal_purchaseBtn = document.createElement("button");
+modal_purchaseBtn.className = "purchase_button";
 modal_purchaseBtn.textContent = "구매하기";
 const modal_page = document.querySelector(".purchase_modal");
 modal_page.appendChild(modal_purchaseBtn);
 
-//모달 내 구매하기 버튼 추가 -> 클릭시 완료 알림창과 함께 모달 닫기
-//모달 내 총 금액 표시
-
-// modal_purchaseBtn.textContent = "구매하기";
-// modal_purchaseBtn.className = "purchase_item";
+//구매하기 버튼 클릭 시 장바구니 페이지로 돌아가기
+const checkoutModal = document.querySelector(".purchase_button");
+const modalBtnClickHandler = () => {
+  const outModal = "cart.html";
+  location.href = outModal;
+};
+checkoutModal.addEventListener("click", modalBtnClickHandler);
