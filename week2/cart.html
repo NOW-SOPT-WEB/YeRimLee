@@ -47,13 +47,24 @@
           <tbody class="wish_list"></tbody>
         </table>
       </div>
+
       <section>
         <div class="cart_button">
-          <button>구매하기</button>
+          <button class="purchase_btn">구매하기</button>
           <button class="tohome">홈으로</button>
         </div>
       </section>
     </main>
+    <div>
+      <dialog class="purchase_modal">
+        <div class="modal_product_list_wrapper">
+          상품목록
+          <form method="dialog">
+            <button>close</button>
+          </form>
+        </div>
+      </dialog>
+    </div>
     <script type="module" src="./goToHomeCart.js"></script>
     <script type="module" src="./sidebar.js"></script>
     <script type="module" src="./cartPage.js"></script>
