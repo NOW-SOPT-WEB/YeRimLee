@@ -59,14 +59,22 @@ function openModal() {
        <h3>${item.name}</h3>
        <p>${item.price}원</p>
       `;
+    //여기에 구매하기 버튼 추가
   });
   showCart.innerHTML += showCartList.join("");
 }
+
 const purchaseBtn = document.querySelector(".purchase_btn");
 purchaseBtn.addEventListener("click", openModal);
 
+//모달에 구매하기 버튼 추가하기
+const modal_purchaseBtn = document.createElement("button");
+modal_purchaseBtn.textContent = "구매하기";
+const modal_page = document.querySelector(".purchase_modal");
+modal_page.appendChild(modal_purchaseBtn);
+
 //모달 내 구매하기 버튼 추가 -> 클릭시 완료 알림창과 함께 모달 닫기
 //모달 내 총 금액 표시
-// const modal_purchaseBtn = document.createElement("button");
+
 // modal_purchaseBtn.textContent = "구매하기";
 // modal_purchaseBtn.className = "purchase_item";
