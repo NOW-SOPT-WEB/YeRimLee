@@ -1,8 +1,7 @@
 import './Header.css'
 
+const Header = () => { 
 
-
-const Header =  () => { 
   return (
       <header className='header_css'>
         <h1>산리오 맞추기</h1>
