@@ -33,12 +33,12 @@ const handleDeleteBtn = (event) => {
   const targetProductId = targetProduct.querySelector("img").id;
   let cartList = JSON.parse(localStorage.getItem("cartList")) || [];
   const filterCart = cartList.filter((item) => {
-    //foreach filter map find 등등등의 item 배열의 각 요소를 얘기한다
+
     return targetProductId !== item.id.toString(); //toString
   });
 
   localStorage.setItem("cartList", JSON.stringify(filterCart));
-  location.href = location.href;
+  location.href = location.reload();
 };
 
 deleteBtn.forEach((item) => {
@@ -55,9 +55,8 @@ function openModal() {
 
   let showCartList = cartList.map((item) => {
     return `
-       <img id=${item.id} class="modal_img" src="${item.Image}" alt="${
-      item.name
-    }">
+       <img id=${item.id} class="modal_img" src="${item.Image}" alt="${item.name
+      }">
        <p>${item.name}</p>
        <p>${item.price.toLocaleString()}원</p>
       `;
@@ -92,7 +91,6 @@ modal_page.appendChild(modal_purchaseBtn);
 const checkoutModal = document.querySelector(".purchase_button");
 const modalBtnClickHandler = () => {
   alert("구매가 완료되었습니다.");
-  const outModal = "cart.html";
-  location.href = outModal;
+  window.location.href = "cart.html";
 };
 checkoutModal.addEventListener("click", modalBtnClickHandler);

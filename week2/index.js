@@ -103,7 +103,7 @@ const allItem = function () {
   itemSection.innerHTML = itemCards.join("");
 };
 
-function template() {
+function all_item_info() {
   return `
         <tr>
           <td><input type="checkbox"></td>
@@ -114,97 +114,54 @@ function template() {
               </div>
             </td>
             <td>
-                <div class="item_price">${formatPrice(item.price)}</div>
+                <div class="item_price">${(item.price.toLocaleString())}원</div>
             </td>
             <td>
-                <div class="item_category">${item.price.toLocaleString()}원</div>
+                <div class="item_category"></div>
             </td>
             <td>
                 <div class="item_delete"><button>삭제</button></div>
             </td>`;
 }
 allItem();
-//베이스 필터링
-const baseSection = document.querySelector(".section");
+//필터링
+const filterItems = function (category) {
+  const section = document.querySelector(".section");
+  const filteredList = ITEMS_LIST.filter((item) => item.category === category);
 
-const filterBase = function () {
-  const BASE_LIST = ITEMS_LIST.filter((item) => {
-    return item.category == "base";
+  const filteredListInfo = filteredList.map((item) => {
+    return `  
+      <article class="item">  
+        <img src="${item.Image}" alt="${item.name}">  
+        <button class="fa-solid fa-heart" type="button"></button>  
+        <h3>${item.name}</h3>  
+        <p>${item.price.toLocaleString()}원</p>  
+      </article>  
+    `;
   });
-
-  const BASE_LIST_Info = BASE_LIST.map((item) => {
-    return `
-        <article class="item">
-            <img src="${item.Image}" alt="${item.name}">
-            <button class="fa-solid fa-heart" type="button"></button>
-            <h3>${item.name}</h3>
-            <p>${item.price.toLocaleString()}원</p>
-        </article>
-        `;
-  });
-  baseSection.innerHTML = BASE_LIST_Info.join("");
+  section.innerHTML = filteredListInfo.join("");
 };
 
-//아이 필터링
-const eyeSection = document.querySelector(".section");
-
-const filterEye = function () {
-  const EYE_LIST = ITEMS_LIST.filter((item) => {
-    return item.category == "eye";
-  });
-
-  const EYE_LIST_Info = EYE_LIST.map((item) => {
-    return `
-        <article class="item">
-            <img src="${item.Image}" alt="${item.name}">
-            <button class="fa-solid fa-heart" type="button"></button>
-            <h3>${item.name}</h3>
-            <p>${item.price.toLocaleString()}원</p>
-        </article>
-        `;
-  });
-  eyeSection.innerHTML = EYE_LIST_Info.join("");
-};
-
-//색조 필터링
-const colorSection = document.querySelector(".section");
-
-const filterColor = function () {
-  const COLOR_LIST = ITEMS_LIST.filter((item) => {
-    return item.category == "color";
-  });
-
-  const COLOR_LIST_Info = COLOR_LIST.map((item) => {
-    return `
-        <article class="item">
-            <img src="${item.Image}" alt="${item.name}">
-            <button class="fa-solid fa-heart" type="button"></button>
-            <h3>${item.name}</h3>
-            <p>${item.price}원</p>
-        </article>
-        `;
-  });
-  colorSection.innerHTML = COLOR_LIST_Info.join("");
-};
-
-//클릭하면 작동하기
 const navBtnAll = document.querySelector(".nav_all");
 const navBtnBase = document.querySelector(".nav_base");
 const navBtnEye = document.querySelector(".nav_eye");
 const navBtnColor = document.querySelector(".nav_color");
 
 navBtnAll.addEventListener("click", () => {
-  allItem();
+  filterItems("all");
 });
 navBtnBase.addEventListener("click", () => {
-  filterBase();
+  filterItems("base");
 });
+
 navBtnEye.addEventListener("click", () => {
-  filterEye();
+  filterItems("eye");
 });
+
 navBtnColor.addEventListener("click", () => {
-  filterColor();
+  filterItems("color");
 });
+
 //여기서부터는 장바구니리스트에 담기!
 //상품에 클릭이 인식되면, 카트에 추가
 const items = document.querySelectorAll(".item");
