@@ -1,6 +1,6 @@
 import img6 from "../public/img/6.png";
 import Header from "./Header";
-import styled, { createGlobalStyle } from "styled-components";
+import styled from "styled-components";
 import CARD_LIST from "./assets/card";
 import { useState } from "react";
 
@@ -52,6 +52,7 @@ const CardGame = () => {
     const arr = [...isOpen];
     //console.log(arr);
     arr[index] = true;
+    console.log(arr);
     setOpen(arr);
 
     //console.log(arr);
@@ -63,16 +64,12 @@ const CardGame = () => {
       <CardWrapper>
         {CARD_LIST.map((item, index) => {
           return (
-            <PairCard key={index}>
+            <PairCard key={index} onClick={() => OpenCard(index)}>
               <CardImg className="showCard_img" src={item.imgSrc} />
               {isOpen[index] ? (
                 <></>
               ) : (
-                <CoverImg
-                  className="closed_card"
-                  onClick={() => OpenCard(index)}
-                  src={img6}
-                />
+                <CoverImg className="closed_card" src={img6} />
               )}
             </PairCard>
           );
