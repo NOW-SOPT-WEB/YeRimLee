@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="index.css" />
+    <title>야리무의 쇼핑몰</title>
+    <script
+      src="https://kit.fontawesome.com/e126ff8299.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--헤더영역-->
+    <header>
+      <i class="fa-solid fa-heart-circle-plus"></i>
+      <h1>야리무의 쇼핑몰</h1>
+      <i class="fa-solid fa-bars"></i>
+    </header>
+    <!--목차영역-->
+    <nav>
+      <button class="nav_all">전체</button>
+      <button class="nav_base">베이스</button>
+      <button class="nav_eye">아이</button>
+      <button class="nav_color">색조</button>
+    </nav>
+    <!--오른쪽 모달영역-->
+    <aside>
+      <div class="modal hidden">
+        <section class="side_bar">
+          <button class="modal_closeBtn">X</button>
+          <ul>
+            <li class="wishList"><a href="slideBar">관심상품목록</a></li>
+            <li class="page"><a href="slideBar">야리무페이지</a></li>
+            <li class="cart"><a href="cart.html">장바구니</a></li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+    <!--아이템리스트 영역-->
+    <ul class="item_list"></ul>
+    <main>
+      <section class="section"></section>
+    </main>
+    <script src="./index.js"></script>
+    <script src="./sidebar.js"></script>
+    <script src="./goToHome.js"></script>
+  </body>
+</html>

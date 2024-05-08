@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="cart.css" />
+    <title>야리무의 쇼핑몰</title>
+    <script
+      src="https://kit.fontawesome.com/e126ff8299.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!--헤더영역-->
+    <header>
+      <i class="fa-solid fa-heart-circle-plus"></i>
+      <h1>장바구니 페이지</h1>
+      <i class="fa-solid fa-bars"></i>
+    </header>
+    <!--오른쪽 모달영역-->
+    <aside>
+      <div class="modal hidden">
+        <section class="side_bar">
+          <button class="modal_closeBtn">X</button>
+          <ul>
+            <li class="wishList">관심상품목록</li>
+            <li class="page">야리무페이지</li>
+            <li class="cart">장바구니</li>
+          </ul>
+        </section>
+      </div>
+    </aside>
+    <main id="table_container" class="table_style">
+      <div class="table_box">
+        <table class="cart_table">
+          <thead>
+            <tr>
+              <td><input type="checkbox" /></td>
+              <th>상품정보</th>
+              <th>상품금액</th>
+              <th>카테고리</th>
+              <th>비고</th>
+              <td></td>
+            </tr>
+          </thead>
+          <!--여기다가 장바구니 리스트 불러 올 것-->
+          <tbody class="wish_list"></tbody>
+        </table>
+      </div>
+
+      <section>
+        <div class="cart_button">
+          <button class="purchase_btn">구매하기</button>
+          <button class="tohome">홈으로</button>
+        </div>
+      </section>
+    </main>
+    <!--모달영역-->
+    <div>
+      <dialog class="purchase_modal">
+        <div class="modal_product_list_wrapper">
+          <form method="dialog">
+            <button>close</button>
+          </form>
+          <p><상품목록></p>
+        </div>
+      </dialog>
+    </div>
+    <script type="module" src="./goToHomeCart.js"></script>
+    <script type="module" src="./sidebar.js"></script>
+    <script type="module" src="./cartPage.js"></script>
+  </body>
+</html>
