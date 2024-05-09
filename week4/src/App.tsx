@@ -1,19 +1,17 @@
 import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import img1 from "../public/img/포챠코.png";
 
 function App() {
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
   const submitForm = async () => {
     try {
-      //const postData = await axios.post(
-        "https://jsonplaceholder.typicode.com/posts",
-        {
-          userId: userId,
-          userPw: userPw,
-        }
-      );
+      const postData = await axios.post("base_url/member/login/posts", {
+        userId: userId,
+        userPw: userPw,
+      });
       console.log("postData");
     } catch (e) {
       alert("아이디,비밀번호를 입력하세요");
@@ -25,6 +23,7 @@ function App() {
       <AppWrapper>
         <AppContainer>
           <span>Sign-in</span>
+          <img src={img1} alt="포챠코이미지" width="150rem" />
           <p>아이디</p>
           <div>
             <input
@@ -41,7 +40,8 @@ function App() {
               onChange={(e) => setUserPw(e.target.value)}
             />
           </div>
-          <button onClick={submitForm}>Next</button>
+          <button onClick={submitForm}>로그인</button>
+          <button onClick={submitForm}>회원가입</button>
         </AppContainer>
       </AppWrapper>
     </>
@@ -54,7 +54,7 @@ const AppWrapper = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #ffb1b1;
+  background-color: #f5dad2;
   font-size: 2rem;
 `;
 
