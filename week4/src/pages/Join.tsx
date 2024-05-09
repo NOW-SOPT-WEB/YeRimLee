@@ -1,4 +1,3 @@
-import { BrowserRouter } from "react-router-dom";
 import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
@@ -78,5 +77,5 @@ const JoinWrapper = styled.div`
 `;
 
 const JoinContainer = styled.div`
-  width: 10rem;
+  width: 20rem;
 `;
