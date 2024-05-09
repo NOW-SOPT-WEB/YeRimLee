@@ -41,7 +41,9 @@ function Login() {
               onChange={(e) => setUserPw(e.target.value)}
             />
           </div>
-          <button onClick={submitForm}>로그인</button>
+          <Link to="/My">
+            <button onClick={submitForm}>로그인</button>
+          </Link>
           <Link to="/join">
             <button type="button">회원가입</button>
           </Link>
