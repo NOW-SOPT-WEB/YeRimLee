@@ -1,6 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 function Join() {
   const [userId, setUserId] = useState("");
@@ -58,7 +59,11 @@ function Join() {
               onChange={(e) => setPhoneNumber(e.target.value)}
             />
           </div>
-          <button onClick={submitForm}>회원가입</button>
+          <Link to="/login">
+            <button type="button" onClick={submitForm}>
+              회원가입
+            </button>
+          </Link>
           <button onClick={submitForm}>뒤로가기</button>
         </JoinContainer>
       </JoinWrapper>
