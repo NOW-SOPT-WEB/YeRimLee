@@ -8,7 +8,9 @@ const Main = () => {
     <MainWrapper>
       <MainContainer>
         <img src={img2} alt="피짱즈이미지" width="200rem" />
-        <button type="button">내정보</button>
+        <Link to="/my">
+          <button type="button">내정보</button>
+        </Link>
         <Link to="/join">
           <button type="button">회원가입</button>
         </Link>
@@ -28,5 +30,5 @@ const MainWrapper = styled.div`
 `;
 
 const MainContainer = styled.div`
-  width: 10rem;
+  width: 20rem;
 `;
