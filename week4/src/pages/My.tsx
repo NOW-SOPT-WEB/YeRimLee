@@ -1,6 +1,5 @@
-import axios from "axios";
 import { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import { Navigate, useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import axios, { AxiosError } from "axios";
 
@@ -10,6 +9,7 @@ function My() {
   const [previousPassword, setPreviousPassword] = useState("");
   const [newPassword, setNewPassword] = useState("");
   const [newPasswordVerification, setNewPasswordVerification] = useState("");
+  const navigate = useNavigate();
 
   useEffect(() => {
     const dataFetch = async () => {
@@ -42,7 +42,8 @@ function My() {
           headers: { memberId: memberId },
         }
       );
-      console.log(response); //알림창이랑 페이지 이동 구현해야함
+      console.log(response);
+      alert("비밀번호 변경이 완료되었습니다."); // 페이지 이동 구현해야함
     } catch (error) {
       if (error instanceof AxiosError) {
         alert(error.response?.data.message);
@@ -85,6 +86,10 @@ function My() {
               </button>
             </ul>
           </details>
+
+          <button type="button" onClick={() => navigate("/main")}>
+            홈으로
+          </button>
         </MyContainer>
       </MyWrapper>
     </>
@@ -105,6 +110,6 @@ const MyContainer = styled.div`
   width: 45rem;
 `;
 
-const UserText = styled.p`
-  font-size: 4rem;
-`;
+// const UserText = styled.p`
+//   font-size: 4rem;
+// `;
