@@ -1,7 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
-import axios, { AxiosError } from "axios";
-import { Link, useNavigate } from "react-router-dom";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 function Join() {
   const [userId, setUserId] = useState("");
@@ -72,11 +72,11 @@ function Join() {
             />
             <p>전화번호가 형식(010-****-****)</p>
           </div>
-          {/* <Link to="/login"> */}
+
           <button type="button" onClick={submitForm}>
             회원가입
           </button>
-          {/* </Link> */}
+
           <button onClick={() => navigate(-1)}>뒤로가기</button>
         </JoinContainer>
       </JoinWrapper>
