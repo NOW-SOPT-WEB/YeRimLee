@@ -1,4 +1,3 @@
-import React from "react";
 import { Link } from "react-router-dom";
 import img2 from "../../public/img/피짱즈.png";
 import styled from "styled-components";
@@ -7,8 +6,8 @@ const Main = () => {
   return (
     <MainWrapper>
       <MainContainer>
-        <img src={img2} alt="피짱즈이미지" width="200rem" />
-        <Link to="/my">
+        <img src={img2} alt="피짱즈이미지" width="300rem" />
+        <Link to="/my/:memberId">
           <button type="button">내정보</button>
         </Link>
         <Link to="/join">
