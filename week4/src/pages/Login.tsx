@@ -2,7 +2,7 @@ import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import img1 from "../../public/img/포챠코.png";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useParams } from "react-router-dom";
 
 function Login() {
   const [userId, setUserId] = useState("");
@@ -20,8 +20,9 @@ function Login() {
           password: userPw,
         }
       );
-      navigate("/my");
       const memberId = postData.headers.location;
+      navigate(`/my/${memberId}`);
+
       setUniqueId(uniqueId);
       // console.log(postData);
       // console.log(memberId);
