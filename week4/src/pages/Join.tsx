@@ -1,6 +1,6 @@
 import { useState } from "react";
 import styled from "styled-components";
-import axios from "axios";
+import axios, { AxiosError } from "axios";
 import { useNavigate } from "react-router-dom";
 
 function Join() {
@@ -25,7 +25,10 @@ function Join() {
       alert("웰컴!");
       navigate("/login");
     } catch (error) {
-      alert(error.response.data.message);
+      if (error instanceof AxiosError) {
+        alert(error.response?.data.message);
+      }
+
       console.log(error);
     }
   };
