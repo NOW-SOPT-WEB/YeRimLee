@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { Navigate, useNavigate, useParams } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import styled from "styled-components";
 import axios, { AxiosError } from "axios";
 
@@ -13,17 +13,21 @@ function My() {
 
   useEffect(() => {
     const dataFetch = async () => {
+      if (!previousPassword || !newPassword || !newPasswordVerification) {
+        alert("모든 정보를 입력해주세요!");
+        return;
+      }
       try {
         const userInfoData = await axios.get(
           `${import.meta.env.VITE_APP_BASE_URL}/member/info`,
-          { headers: { memberId: memberId } }
+          { headers: { memberId } }
         );
         console.log(userInfoData);
 
         setUserInfo(userInfoData);
         console.log({ userInfo });
-      } catch (e) {
-        console.error(e);
+      } catch (error) {
+        console.error(error);
       }
     };
     dataFetch();
@@ -39,7 +43,7 @@ function My() {
           newPasswordVerification: newPasswordVerification,
         },
         {
-          headers: { memberId: memberId },
+          headers: { memberId },
         }
       );
       console.log(response);
@@ -55,11 +59,11 @@ function My() {
     <>
       <MyWrapper>
         <MyContainer>
-          {/* <UserText>id:{userInfo.data.data.authenticationId}</UserText>
+          <UserText>id:{userInfo.data.data.authenticationId}</UserText>
 
           <UserText>닉네임:{userInfo.data.data.nickname}</UserText>
 
-          <UserText>전화번호:{userInfo.data.data.phone}</UserText> */}
+          <UserText>전화번호:{userInfo.data.data.phone}</UserText>
           <details>
             <summary>비밀번호 변경</summary>
             <ul>
@@ -68,6 +72,7 @@ function My() {
                 type="text"
                 value={previousPassword}
                 onChange={(e) => setPreviousPassword(e.target.value)}
+                required
               />
               <li>새 비밀번호</li>
               <input
@@ -110,6 +115,6 @@ const MyContainer = styled.div`
   width: 45rem;
 `;
 
-// const UserText = styled.p`
-//   font-size: 4rem;
-// `;
+const UserText = styled.p`
+  font-size: 4rem;
+`;
