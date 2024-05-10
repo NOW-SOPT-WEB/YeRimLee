@@ -59,11 +59,11 @@ function My() {
     <>
       <MyWrapper>
         <MyContainer>
-          <UserText>id:{userInfo?.data?.data.authenticationId}</UserText>
+          <UserText>id:{userInfo.data.data.authenticationId}</UserText>
 
-          <UserText>닉네임:{userInfo?.data?.data.nickname}</UserText>
+          <UserText>닉네임:{userInfo.data.data.nickname}</UserText>
 
-          <UserText>전화번호:{userInfo?.data?.data.phone}</UserText>
+          <UserText>전화번호:{userInfo.data.data.phone}</UserText>
           <details>
             <summary>비밀번호 변경</summary>
             <ul>
