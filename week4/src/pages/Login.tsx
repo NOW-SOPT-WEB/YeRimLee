@@ -2,20 +2,32 @@ import { useState } from "react";
 import styled from "styled-components";
 import axios from "axios";
 import img1 from "../../public/img/포챠코.png";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 function Login() {
   const [userId, setUserId] = useState("");
   const [userPw, setUserPw] = useState("");
-  const submitForm = async () => {
+  const [uniqueId, setUniqueId] = useState("");
+
+  const navigate = useNavigate();
+
+  const handleClickLogin = async () => {
     try {
-      const postData = await axios.post("base_url/member/login/posts", {
-        userId: userId,
-        userPw: userPw,
-      });
-      //console.log("postData");
-    } catch (e) {
+      const postData = await axios.post(
+        `${import.meta.env.VITE_APP_BASE_URL}/member/login`,
+        {
+          authenticationId: userId,
+          password: userPw,
+        }
+      );
+      navigate("/my");
+      const memberId = postData.headers.location;
+      setUniqueId(uniqueId);
+      // console.log(postData);
+      // console.log(memberId);
+    } catch (error) {
       alert("아이디,비밀번호를 입력하세요");
+      console.log(error);
     }
   };
 
@@ -41,11 +53,15 @@ function Login() {
               onChange={(e) => setUserPw(e.target.value)}
             />
           </div>
-          <Link to="/My">
-            <button onClick={submitForm}>로그인</button>
-          </Link>
+
+          <button type="button" onClick={handleClickLogin} onChange>
+            로그인
+          </button>
+
           <Link to="/join">
-            <button type="button">회원가입</button>
+            <button type="button" onClick={() => navigate("/join")}>
+              회원가입
+            </button>
           </Link>
         </LoginContainer>
       </LoginWrapper>
