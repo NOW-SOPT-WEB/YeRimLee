@@ -13,10 +13,6 @@ function My() {
 
   useEffect(() => {
     const dataFetch = async () => {
-      if (!previousPassword || !newPassword || !newPasswordVerification) {
-        alert("모든 정보를 입력해주세요!");
-        return;
-      }
       try {
         const userInfoData = await axios.get(
           `${import.meta.env.VITE_APP_BASE_URL}/member/info`,
@@ -35,6 +31,10 @@ function My() {
 
   const handleSubmit = async () => {
     try {
+      if (!previousPassword || !newPassword || !newPasswordVerification) {
+        alert("모든 정보를 입력해주세요!");
+        return;
+      }
       const response = await axios.patch(
         `${import.meta.env.VITE_APP_BASE_URL}/member/password`,
         {
@@ -59,11 +59,11 @@ function My() {
     <>
       <MyWrapper>
         <MyContainer>
-          <UserText>id:{userInfo.data.data.authenticationId}</UserText>
+          <UserText>id:{userInfo?.data?.data.authenticationId}</UserText>
 
-          <UserText>닉네임:{userInfo.data.data.nickname}</UserText>
+          <UserText>닉네임:{userInfo?.data?.data.nickname}</UserText>
 
-          <UserText>전화번호:{userInfo.data.data.phone}</UserText>
+          <UserText>전화번호:{userInfo?.data?.data.phone}</UserText>
           <details>
             <summary>비밀번호 변경</summary>
             <ul>
