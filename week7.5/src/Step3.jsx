@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export function Step3({ setStep }) {
+export function Step3({ setStep, goBack }) {
   return (
     <Article>
       <Description>마지막으로 골라줘!</Description>
@@ -8,7 +8,7 @@ export function Step3({ setStep }) {
         <Option1 onClick={setStep}>
           <br />
           <br />
-          국물X
+          국물0
         </Option1>
         <Option2 onClick={setStep}>
           <br />
@@ -16,8 +16,8 @@ export function Step3({ setStep }) {
           국물X
         </Option2>
         <ButtonBox>
-          <BackButton>이전으로</BackButton>
-          <NextButton>다음으로</NextButton>
+          <BackButton onClick={goBack}>이전으로</BackButton>
+          <NextButton onClick={setStep}>다음으로</NextButton>
         </ButtonBox>
       </OptionBox>
     </Article>
@@ -83,6 +83,10 @@ const BackButton = styled.button`
   height: 1rem;
   background-color: #e1afd1;
   border: none;
+  &:hover {
+    background: #f3d0d7;
+    color: white;
+  }
 `;
 
 const NextButton = styled.button`
@@ -92,4 +96,8 @@ const NextButton = styled.button`
   height: 1rem;
   background-color: #e1afd1;
   border: none;
+  &:hover {
+    background: #f3d0d7;
+    color: white;
+  }
 `;

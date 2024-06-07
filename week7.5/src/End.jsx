@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export function End() {
+export function End({ goStart }) {
   return (
     <Article>
       <Description>오늘의 추천음식은 바로!!</Description>
       <OptionBox>
         <Menu>메뉴사진</Menu>
         <ButtonBox>
-          <ReturnBtn>다시하기</ReturnBtn>
+          <ReturnBtn onClick={goStart}>다시하기</ReturnBtn>
         </ButtonBox>
       </OptionBox>
     </Article>
@@ -55,4 +55,8 @@ const ReturnBtn = styled.button`
   height: 1rem;
   background-color: #e1afd1;
   border: none;
+  &:hover {
+    background: #f3d0d7;
+    color: white;
+  }
 `;

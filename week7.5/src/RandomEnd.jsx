@@ -1,29 +1,21 @@
 import styled from "styled-components";
-
-export function Step0({ setStep }) {
+//사진 랜덤 첨부기능 추가하기
+export function RandomEnd({ goStart }) {
   return (
-    <Article>
-      <Description>원하는 추천방식을 골라줘!</Description>
+    <>
+      <Description>오늘의 추천음식은 바로!!</Description>
       <OptionBox>
-        <Ment>취향대로 추천!</Ment>
+        <Menu>메뉴사진</Menu>
         <ButtonBox>
-          <StartBtn onClick={setStep}>시작하기</StartBtn>
+          <ReturnBtn onClick={goStart}>다시하기</ReturnBtn>
         </ButtonBox>
       </OptionBox>
-    </Article>
+    </>
   );
 }
 
-const Article = styled.div`
-  margin: 5rem 12rem 0rem 12rem;
-  width: 60rem;
-  height: 40rem;
-  background-color: #ffeae3;
-  border-radius: 2%;
-`;
-
-const Description = styled.h2`
-  padding: 4rem;
+const Description = styled.p`
+  padding: 2rem;
   text-decoration: none;
   text-align: center;
 `;
@@ -33,8 +25,8 @@ const OptionBox = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 `;
-const Ment = styled.div`
-  margin: 4rem;
+const Menu = styled.div`
+  margin: 3.5rem;
   text-align: center;
   width: 40rem;
   height: 14rem;
@@ -48,9 +40,9 @@ const ButtonBox = styled.div`
   justify-content: center;
 `;
 
-const StartBtn = styled.button`
+const ReturnBtn = styled.button`
   text-align: center;
-  margin: 5rem;
+  margin: 0.6rem;
   width: 4rem;
   height: 1rem;
   background-color: #e1afd1;

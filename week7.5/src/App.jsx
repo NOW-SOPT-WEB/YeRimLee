@@ -6,7 +6,9 @@ import { Step2 } from "./Step2";
 import { Step3 } from "./Step3";
 import { End } from "./End";
 import { useState } from "react";
-import { Landom5 } from "./Random5";
+import { Random5 } from "./Random5";
+import { CountDown } from "./CountDown";
+// import { RandomEnd } from "./RandomEnd";
 
 function App() {
   const [step, setStep] = useState(-1);
@@ -21,11 +23,21 @@ function App() {
         <Start setStep={() => setStep(0)} goRandom={() => setStep(5)} />
       )}
       {step === 0 && <Step0 setStep={() => setStep(1)} />}
-      {step === 1 && <Step1 setStep={() => setStep(2)} />}
-      {step === 2 && <Step2 setStep={() => setStep(3)} />}
-      {step === 3 && <Step3 setStep={() => setStep(4)} />}
-      {step === 4 && <End />}
-      {step === 5 && <Landom5 />}
+      {step === 1 && (
+        <Step1 setStep={() => setStep(2)} goBack={() => setStep(-1)} />
+      )}
+      {step === 2 && (
+        <Step2 setStep={() => setStep(3)} goBack={() => setStep(1)} />
+      )}
+      {step === 3 && (
+        <Step3 setStep={() => setStep(4)} goBack={() => setStep(2)} />
+      )}
+      {step === 4 && <End goStart={() => setStep(-1)} />}
+      {step === 5 && <Random5 setStep={() => setStep(6)} />}
+      {step === 6 && <CountDown setStep={() => setStep(7)} />}
+      {/* {step === 7 && (
+        <RandomEnd setStep={() => setStep(8)} goStart={() => setStep(-1)} />
+      )} */}
     </>
   );
 }

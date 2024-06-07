@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export function Step2({ setStep }) {
+export function Step2({ setStep, goBack }) {
   return (
     <Step1Wrapper>
       <Description>그럼 이 중에는 뭐가 끌려?</Description>
@@ -16,8 +16,8 @@ export function Step2({ setStep }) {
           고기/해물
         </Option3>
         <ButtonBox>
-          <BackButton>이전으로</BackButton>
-          <NextButton>다음으로</NextButton>
+          <BackButton onClick={goBack}>이전으로</BackButton>
+          <NextButton onClick={setStep}>다음으로</NextButton>
         </ButtonBox>
       </OptionBox>
     </Step1Wrapper>
@@ -97,6 +97,10 @@ const BackButton = styled.button`
   height: 1rem;
   background-color: #e1afd1;
   border: none;
+  &:hover {
+    background: #f3d0d7;
+    color: white;
+  }
 `;
 
 const NextButton = styled.button`
@@ -106,4 +110,8 @@ const NextButton = styled.button`
   height: 1rem;
   background-color: #e1afd1;
   border: none;
+  &:hover {
+    background: #f3d0d7;
+    color: white;
+  }
 `;

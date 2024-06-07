@@ -1,12 +1,6 @@
 import styled from "styled-components";
-import { useEffect } from "react";
 
 export function Random5({ setStep }) {
-  const [time, setTime] = useEffect(3);
-  useEffect(() => {
-    time > 0 && setTimeout(() => setTime(time - 1), 1000);
-  }, [time]);
-
   return (
     <Article>
       <Description>원하는 추천방식을 골라줘!</Description>
@@ -62,4 +56,8 @@ const StartBtn = styled.button`
   height: 1rem;
   background-color: #e1afd1;
   border: none;
+  &:hover {
+    background: #f3d0d7;
+    color: white;
+  }
 `;
