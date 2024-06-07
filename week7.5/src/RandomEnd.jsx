@@ -1,11 +1,16 @@
 import styled from "styled-components";
+import { menuArr } from "./MenuList";
+
 //사진 랜덤 첨부기능 추가하기
 export function RandomEnd({ goStart }) {
+  const randomIndex = Math.floor(Math.random() * menuArr.length);
+
+  const menuImg = menuArr[randomIndex];
   return (
     <>
       <Description>오늘의 추천음식은 바로!!</Description>
       <OptionBox>
-        <Menu>메뉴사진</Menu>
+        <Menu src={menuImg} />
         <ButtonBox>
           <ReturnBtn onClick={goStart}>다시하기</ReturnBtn>
         </ButtonBox>
