@@ -17,7 +17,7 @@ function App() {
     <>
       <Header>
         <Title>🧃야리무의 메뉴추천🧃</Title>
-        <Reset>처음으로</Reset>
+        <Reset onClick={() => setStep(-1)}>처음으로</Reset>
       </Header>
       {step === -1 && (
         <Start setStep={() => setStep(0)} goRandom={() => setStep(5)} />
