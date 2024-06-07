@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-export function Start() {
+export function Start({ setStep, goRandom }) {
   return (
     <Article>
       <Description>원하는 추천 방식을 골라줘!</Description>
       <OptionBox>
-        <Option1>
+        <Option1 onClick={setStep}>
           <br />
           <br />
           취향대로 추천
         </Option1>
-        <Option2>
+        <Option2 onClick={goRandom}>
           <br />
           <br />
           랜덤 추천

@@ -1,19 +1,19 @@
 import styled from "styled-components";
 
-export function Step1() {
+export function Step1({ setStep }) {
   return (
     <Step1Wrapper>
       <Description>오늘은 어떤 종류가 먹고 싶어?</Description>
       <OptionBox>
-        <Option1>
+        <Option1 onClick={setStep}>
           <br />
           한식
         </Option1>
-        <Option2>
+        <Option2 onClick={setStep}>
           <br />
           중식
         </Option2>
-        <Option3>
+        <Option3 onClick={setStep}>
           <br />
           일식
         </Option3>

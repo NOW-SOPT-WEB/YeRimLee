@@ -1,13 +1,20 @@
 import styled from "styled-components";
+import { useEffect } from "react";
 
-export function End() {
+export function Random5({ setStep }) {
+  const [time, setTime] = useEffect(3);
+  useEffect(() => {
+    time > 0 && setTimeout(() => setTime(time - 1), 1000);
+  }, [time]);
+
   return (
     <Article>
-      <Description>오늘의 추천음식은 바로!!</Description>
+      <Description>원하는 추천방식을 골라줘!</Description>
       <OptionBox>
-        <Menu>메뉴사진</Menu>
+        <Ment>랜덤 추천!</Ment>
+
         <ButtonBox>
-          <ReturnBtn>다시하기</ReturnBtn>
+          <StartBtn onClick={setStep}>시작하기</StartBtn>
         </ButtonBox>
       </OptionBox>
     </Article>
@@ -33,7 +40,7 @@ const OptionBox = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 `;
-const Menu = styled.div`
+const Ment = styled.div`
   margin: 4rem;
   text-align: center;
   width: 40rem;
@@ -48,7 +55,7 @@ const ButtonBox = styled.div`
   justify-content: center;
 `;
 
-const ReturnBtn = styled.button`
+const StartBtn = styled.button`
   text-align: center;
   margin: 5rem;
   width: 4rem;

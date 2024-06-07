@@ -5,20 +5,27 @@ import { Step1 } from "./Step1";
 import { Step2 } from "./Step2";
 import { Step3 } from "./Step3";
 import { End } from "./End";
+import { useState } from "react";
+import { Landom5 } from "./Random5";
 
 function App() {
+  const [step, setStep] = useState(-1);
+
   return (
     <>
       <Header>
         <Title>🧃야리무의 메뉴추천🧃</Title>
         <Reset>처음으로</Reset>
       </Header>
-      <Start />
-      <Step0 />
-      <Step1 />
-      <Step2 />
-      <Step3 />
-      <End />
+      {step === -1 && (
+        <Start setStep={() => setStep(0)} goRandom={() => setStep(5)} />
+      )}
+      {step === 0 && <Step0 setStep={() => setStep(1)} />}
+      {step === 1 && <Step1 setStep={() => setStep(2)} />}
+      {step === 2 && <Step2 setStep={() => setStep(3)} />}
+      {step === 3 && <Step3 setStep={() => setStep(4)} />}
+      {step === 4 && <End />}
+      {step === 5 && <Landom5 />}
     </>
   );
 }

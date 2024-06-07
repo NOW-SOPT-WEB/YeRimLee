@@ -1,13 +1,13 @@
 import styled from "styled-components";
 
-export function Step0() {
+export function Step0({ setStep }) {
   return (
     <Article>
       <Description>원하는 추천방식을 골라줘!</Description>
       <OptionBox>
         <Ment>취향대로 추천!</Ment>
         <ButtonBox>
-          <StartBtn>시작하기</StartBtn>
+          <StartBtn onClick={setStep}>시작하기</StartBtn>
         </ButtonBox>
       </OptionBox>
     </Article>

@@ -1,16 +1,16 @@
 import styled from "styled-components";
 
-export function Step3() {
+export function Step3({ setStep }) {
   return (
     <Article>
       <Description>마지막으로 골라줘!</Description>
       <OptionBox>
-        <Option1>
+        <Option1 onClick={setStep}>
           <br />
           <br />
           국물X
         </Option1>
-        <Option2>
+        <Option2 onClick={setStep}>
           <br />
           <br />
           국물X
