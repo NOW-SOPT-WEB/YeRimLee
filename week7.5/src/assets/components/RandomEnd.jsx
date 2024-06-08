@@ -1,16 +1,22 @@
 import styled from "styled-components";
 import { menuArr } from "./MenuList";
+import { useState } from "react";
 
 //사진 랜덤 첨부기능 추가하기
 export function RandomEnd({ goStart }) {
-  const randomIndex = Math.floor(Math.random() * menuArr.length);
+  //이미지 랜덤 관련 상태
+  const [randomPic, setRandomPic] = useState();
 
-  const menuImg = menuArr[randomIndex];
+  //기존 랜덤 이미지 로직
+  // const randomIndex = Math.floor(Math.random() * menuArr.length);
+  // console.log(randomIndex);
+
+  // const menuImg = menuArr[randomIndex];
   return (
     <>
       <Description>오늘의 추천음식은 바로!!</Description>
       <OptionBox>
-        <Menu src={menuImg} />
+        <Image src={menuImg} />
         <ButtonBox>
           <ReturnBtn onClick={goStart}>다시하기</ReturnBtn>
         </ButtonBox>
@@ -30,7 +36,7 @@ const OptionBox = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 `;
-const Menu = styled.div`
+const Image = styled.div`
   margin: 3.5rem;
   text-align: center;
   width: 40rem;

@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
-import { RandomEnd } from "./RandomEnd";
+import { RandomEnd } from "../components/RandomEnd";
 
 export function CountDown() {
   const [time, setTime] = useState(3);
