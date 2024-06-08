@@ -1,17 +1,41 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 export function Step2({ setStep, goBack }) {
+  //선택값 저장
+  const [category, setCategory] = useState("");
+
+  const getCategory = (e) => {
+    setCategory(e);
+    console.log(category);
+  };
+
   return (
     <Step1Wrapper>
       <Description>그럼 이 중에는 뭐가 끌려?</Description>
       <OptionBox>
-        <Option1 onClick={setStep}>
+        <Option1
+          onClick={() => {
+            getCategory("밥");
+            setStep(3);
+          }}
+        >
           <br />밥
         </Option1>
-        <Option2 onClick={setStep}>
+        <Option2
+          onClick={() => {
+            getCategory("면");
+            setStep(3);
+          }}
+        >
           <br />면
         </Option2>
-        <Option3 onClick={setStep}>
+        <Option3
+          onClick={() => {
+            getCategory("고기");
+            setStep(3);
+          }}
+        >
           <br />
           고기/해물
         </Option3>

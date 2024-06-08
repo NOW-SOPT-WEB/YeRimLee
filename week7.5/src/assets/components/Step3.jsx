@@ -1,16 +1,33 @@
 import styled from "styled-components";
+import { useState } from "react";
 
 export function Step3({ setStep, goBack }) {
+  //선택값 저장
+  const [soup, setSoup] = useState("");
+  const getSoup = (e) => {
+    setSoup(e);
+    console.log(soup);
+  };
   return (
     <Article>
       <Description>마지막으로 골라줘!</Description>
       <OptionBox>
-        <Option1 onClick={setStep}>
+        <Option1
+          onClick={() => {
+            getSoup("국물0");
+            setStep(4);
+          }}
+        >
           <br />
           <br />
           국물0
         </Option1>
-        <Option2 onClick={setStep}>
+        <Option2
+          onClick={() => {
+            getSoup("국물X");
+            setStep(4);
+          }}
+        >
           <br />
           <br />
           국물X
