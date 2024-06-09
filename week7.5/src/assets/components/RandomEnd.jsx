@@ -11,7 +11,7 @@ export function RandomEnd({ goStart }) {
     <>
       <Description>오늘의 추천음식은 바로!!</Description>
       <OptionBox>
-        <Image src={menuImg} />
+        <Image src={menuImg.Image} />
         <ButtonBox>
           <ReturnBtn onClick={goStart}>다시하기</ReturnBtn>
         </ButtonBox>
