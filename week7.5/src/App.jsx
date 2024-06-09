@@ -1,13 +1,13 @@
 import styled from "styled-components";
-import { Start } from "./assets/components/Start";
+import { Start } from "./assets/components/Start-1";
 import { Step0 } from "./assets/components/Step0";
 import { Step1 } from "./assets/components/Step1";
 import { Step2 } from "./assets/components/Step2";
 import { Step3 } from "./assets/components/Step3";
-import { End } from "./assets/components/End";
+import { End } from "./assets/components/End4";
 import { useState } from "react";
 import { Random5 } from "./assets/components/Random5";
-import { CountDown } from "./assets/utils/CountDown";
+import { CountDown } from "./assets/utils/CountDown6";
 // import { RandomEnd } from "./RandomEnd";
 
 function App() {
