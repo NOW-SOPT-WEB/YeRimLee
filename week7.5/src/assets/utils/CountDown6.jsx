@@ -1,17 +1,22 @@
 import { useState } from "react";
 import { useEffect } from "react";
 import styled from "styled-components";
-import { RandomEnd } from "../components/RandomEnd";
+// import { RandomEnd } from "../components/RandomEnd";
 
-export function CountDown() {
+export function CountDown({ setStep }) {
   const [time, setTime] = useState(3);
   useEffect(() => {
+    if (time === 0) {
+      setStep();
+      return; // 밑에 실행하지 않고 종료
+    }
+
     time > 0 && setTimeout(() => setTime(time - 1), 1000);
-  }, [time]);
+  }, [time, setStep]);
 
   return (
     <Article>
-      <Description>{time ? time : <RandomEnd />}</Description>
+      <Description>{time}</Description>
     </Article>
   );
 }
