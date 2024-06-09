@@ -72,13 +72,33 @@ p {
 
 #all {
   display: flex;
+  justify-content: column;
+  gap: 4rem;
+  width: 70rem;
 }
-
+#base {
+  display: flex;
+  justify-content: column;
+  gap: 4rem;
+  width: 70rem;
+}
+#color {
+  display: flex;
+  justify-content: column;
+  gap: 4rem;
+  width: 70rem;
+}
+#eye {
+  display: flex;
+  justify-content: column;
+  gap: 4rem;
+  width: 70rem;
+}
 .item_wrapper {
   float: left;
 }
 
 .product_img {
-  width: 100px;
-  height: 100px;
+  width: 280px;
+  height: 280px;
 }
