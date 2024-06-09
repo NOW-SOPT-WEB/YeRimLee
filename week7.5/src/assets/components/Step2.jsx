@@ -1,13 +1,10 @@
 import styled from "styled-components";
-import { useState } from "react";
 
-export function Step2({ setStep, goBack }) {
+export function Step2({ setStep, goBack, setCategory }) {
   //선택값 저장
-  const [category, setCategory] = useState("");
-
-  const getCategory = (e) => {
-    setCategory(e);
-    console.log(category);
+  const getCategory = (value) => {
+    setCategory(value);
+    console.log(value);
   };
 
   return (

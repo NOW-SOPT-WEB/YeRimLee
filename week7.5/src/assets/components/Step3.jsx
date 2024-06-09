@@ -1,12 +1,11 @@
 import styled from "styled-components";
-import { useState } from "react";
 
-export function Step3({ setStep, goBack }) {
+export function Step3({ setStep, goBack, setSoup }) {
   //선택값 저장
-  const [soup, setSoup] = useState("");
+
   const getSoup = (e) => {
     setSoup(e);
-    console.log(soup);
+    console.log(e);
   };
   return (
     <Article>

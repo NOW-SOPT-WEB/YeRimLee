@@ -8,10 +8,15 @@ import { End } from "./assets/components/End4";
 import { useState } from "react";
 import { Random5 } from "./assets/components/Random5";
 import { CountDown } from "./assets/utils/CountDown6";
-// import { RandomEnd } from "./RandomEnd";
+import { RandomEnd } from "./assets/components/RandomEnd";
 
 function App() {
+  // 컴포넌트 렌더링 관련 상태
   const [step, setStep] = useState(-1);
+  // 선택값 저장
+  const [country, setCountry] = useState("");
+  const [category, setCategory] = useState("");
+  const [soup, setSoup] = useState("");
 
   return (
     <>
@@ -24,20 +29,39 @@ function App() {
       )}
       {step === 0 && <Step0 setStep={() => setStep(1)} />}
       {step === 1 && (
-        <Step1 setStep={() => setStep(2)} goBack={() => setStep(-1)} />
+        <Step1
+          setCountry={setCountry}
+          setStep={() => setStep(2)}
+          goBack={() => setStep(-1)}
+        />
       )}
       {step === 2 && (
-        <Step2 setStep={() => setStep(3)} goBack={() => setStep(1)} />
+        <Step2
+          setCategory={setCategory}
+          setStep={() => setStep(3)}
+          goBack={() => setStep(1)}
+        />
       )}
       {step === 3 && (
-        <Step3 setStep={() => setStep(4)} goBack={() => setStep(2)} />
+        <Step3
+          setSoup={setSoup}
+          setStep={() => setStep(4)}
+          goBack={() => setStep(2)}
+        />
       )}
-      {step === 4 && <End goStart={() => setStep(-1)} />}
+      {step === 4 && (
+        <End
+          category={category}
+          soup={soup}
+          country={country}
+          goStart={() => setStep(-1)}
+        />
+      )}
       {step === 5 && <Random5 setStep={() => setStep(6)} />}
       {step === 6 && <CountDown setStep={() => setStep(7)} />}
-      {/* {step === 7 && (
+      {step === 7 && (
         <RandomEnd setStep={() => setStep(8)} goStart={() => setStep(-1)} />
-      )} */}
+      )}
     </>
   );
 }

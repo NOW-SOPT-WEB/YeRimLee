@@ -1,24 +1,18 @@
-import { useState } from "react";
 import styled from "styled-components";
 
-export function Step1({ goBack, setStep }) {
-  // 선택값 저장
-  const [country, setCountry] = useState("");
-
-  const getCountry = (e) => {
-    setCountry(e);
-    //콘솔 한 번 클릭하면 안되고 두 번 클릭하면 됨
-    console.log(country);
+export function Step1({ goBack, setStep, setCountry }) {
+  const getCategory = (value) => {
+    setCountry(value);
+    console.log(value);
   };
-
   return (
     <Step1Wrapper>
       <Description>오늘은 어떤 종류가 먹고 싶어?</Description>
       <OptionBox>
         <Option1
           onClick={() => {
-            getCountry("한식");
-            setStep(2);
+            getCategory("한식");
+            setStep();
           }}
         >
           <br />
@@ -26,8 +20,8 @@ export function Step1({ goBack, setStep }) {
         </Option1>
         <Option2
           onClick={() => {
-            getCountry("중식");
-            setStep(2);
+            getCategory("중식");
+            setStep();
           }}
         >
           <br />
@@ -35,8 +29,8 @@ export function Step1({ goBack, setStep }) {
         </Option2>
         <Option3
           onClick={() => {
-            getCountry("일식");
-            setStep(2);
+            getCategory("일식");
+            setStep();
           }}
         >
           <br />

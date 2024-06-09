@@ -1,11 +1,22 @@
 import styled from "styled-components";
+import { menuArr } from "../../MenuList";
+export function End({ goStart, country, soup, category }) {
+  const filteredMenu = menuArr.filter(
+    (menu) =>
+      menu.country === country &&
+      menu.soup === soup &&
+      menu.category === category
+  );
+  // console.log(filteredMenu[0].name);
+  // console.log(country);
+  // setEndMenu(filteredMenu[0]);
+  // const [endMenu, setEndMenu] = useState({});
 
-export function End({ goStart }) {
   return (
     <Article>
       <Description>오늘의 추천음식은 바로!!</Description>
       <OptionBox>
-        <Menu>메뉴사진</Menu>
+        <Menu src={filteredMenu[0].Image} />
         <ButtonBox>
           <ReturnBtn onClick={goStart}>다시하기</ReturnBtn>
         </ButtonBox>
@@ -33,14 +44,15 @@ const OptionBox = styled.div`
   flex-wrap: wrap;
   justify-content: center;
 `;
-const Menu = styled.div`
+const Menu = styled.img`
   margin: 4rem;
   text-align: center;
   width: 40rem;
-  height: 14rem;
+  height: 20rem;
   border-radius: 8%;
   background-color: #f6f5f2;
   font-size: 2rem;
+  object-fit: cover;
 `;
 
 const ButtonBox = styled.div`
