@@ -19,15 +19,14 @@
     </header>
     <!--오른쪽 모달영역-->
     <aside>
-      <div class="modal hidden">
-        <section class="side_bar">
-          <button class="modal_closeBtn">X</button>
-          <ul>
-            <li class="wishList">관심상품목록</li>
-            <li class="page">야리무페이지</li>
-            <li class="cart">장바구니</li>
-          </ul>
-        </section>
+      <section class="modal-section hide-modal">
+        <button class="modal_closeBtn">X</button>
+        <ul>
+          <li class="wishList"><a href="slideBar">관심상품목록</a></li>
+          <li class="page"><a href="slideBar">야리무페이지</a></li>
+          <li class="cart"><a href="cart.html">장바구니</a></li>
+        </ul>
+      </section>
       </div>
     </aside>
     <main id="table_container" class="table_style">
@@ -35,7 +34,7 @@
         <table class="cart_table">
           <thead>
             <tr>
-              <td><input type="checkbox" /></td>
+              <td><input type="checkbox" class="all"/></td>
               <th>상품정보</th>
               <th>상품금액</th>
               <th>카테고리</th>
@@ -63,6 +62,7 @@
             <button>close</button>
           </form>
           <p><상품목록></p>
+          <!-- <p class="modal-total"></p> -->
         </div>
       </dialog>
     </div>
