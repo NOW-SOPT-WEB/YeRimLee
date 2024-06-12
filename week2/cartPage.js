@@ -8,7 +8,7 @@ function renderCartList() {
   let showCartList = cartList.map((item) => {
     return `
         <tr id=${item.id} class="detail_cart_list">
-        <td><input type="checkbox"></td>
+        <td><input type="checkbox" class="checkbox"></td>
         <td><img id=${item.id} class="cartlist_img" src="${item.Image}"></td>
         <td>${item.name}</td>
         <td>${item.price.toLocaleString()}</td>
@@ -38,12 +38,64 @@ const handleDeleteBtn = (event) => {
   });
 
   localStorage.setItem("cartList", JSON.stringify(filterCart));
-  location.href = location.reload();
+  location.href = location.href;
 };
 
 deleteBtn.forEach((item) => {
   item.addEventListener("click", handleDeleteBtn);
 });
+
+
+
+
+
+//선택된 상품 
+const checkboxAll = document.querySelector('.all')
+const checkboxs = document.querySelectorAll('.checkbox');
+
+//체크박스 맨 위에거 누르면 -> 전체선택
+checkboxAll.addEventListener('click', ()=>{
+  checkboxs.forEach(checkbox => {
+      checkbox.checked = checkboxAll.checked;
+  });
+});
+
+//구매하기를 위한 변수 선언, 구매할 상품 'checkedProduct'
+const buyBtn = document.querySelector('.purchase_btn');
+// const modal = document.querySelector('.modal');
+const productModal = document.querySelector('.modal-product');
+let checkedProduct = [];
+let totalPrice = 0;
+
+
+//체크박스 전체 선택시 구매할 상품 선택 
+checkboxAll.addEventListener('change', (event) => {
+  if (event.target.checked){
+      checkedProduct = cartList.slice();
+
+  } else {
+      checkedProduct = [];
+      totalPrice = 0;
+  };
+});
+
+
+//체크박스 개별 선택시 구매할 상품 선택 
+checkboxs.forEach((checkbox, index) => {
+  checkbox.addEventListener('change', () => {
+      if (checkbox.checked) {
+          checkedProduct.push(cartList[index]);
+         
+      } else {
+          const removedIndex = checkedProduct.indexOf(cartList[index]);
+          if (removedIndex !== -1) {
+             
+              checkedProduct.splice(removedIndex, 1);
+          }
+      }
+  });
+});
+
 
 //여기서부터 모달!
 
@@ -53,7 +105,7 @@ function openModal() {
   //모달에 장바구니 리스트 뿌려주기
   const showCart = document.querySelector(".modal_product_list_wrapper");
 
-  let showCartList = cartList.map((item) => {
+  let showCartList = checkedProduct.map((item) => {
     return `
        <img id=${item.id} class="modal_img" src="${item.Image}" alt="${item.name
       }">
@@ -61,20 +113,26 @@ function openModal() {
        <p>${item.price.toLocaleString()}원</p>
       `;
   });
+
   //여기서 총 금액 추가
   let totalPrice = 0;
 
-  let modalCartList = JSON.parse(localStorage.getItem("cartList")) || [];
+  // let modalCartList = JSON.parse(localStorage.getItem("cartList")) || [];
+  let modalCartList = checkedProduct
   modalCartList.forEach((item) => {
     totalPrice += item.price;
   });
 
+
+
   showCart.innerHTML += showCartList.join("");
-  //모달에 구매금액 추가하기
+  // 모달에 구매금액 추가하기
   const modal_totalPrice = document.createElement("p");
   modal_totalPrice.textContent = "구매금액:" + totalPrice.toLocaleString();
   const modal_box = document.querySelector(".modal_product_list_wrapper");
   modal_box.appendChild(modal_totalPrice);
+  
+  
 }
 
 const purchaseBtn = document.querySelector(".purchase_btn");
@@ -94,3 +152,8 @@ const modalBtnClickHandler = () => {
   window.location.href = "cart.html";
 };
 checkoutModal.addEventListener("click", modalBtnClickHandler);
+
+
+
+
+
