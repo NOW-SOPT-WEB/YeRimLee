@@ -123,16 +123,13 @@ function openModal() {
     totalPrice += item.price;
   });
 
-
-
   showCart.innerHTML += showCartList.join("");
   // 모달에 구매금액 추가하기
   const modal_totalPrice = document.createElement("p");
   modal_totalPrice.textContent = "구매금액:" + totalPrice.toLocaleString();
   const modal_box = document.querySelector(".modal_product_list_wrapper");
   modal_box.appendChild(modal_totalPrice);
-  
-  
+
 }
 
 const purchaseBtn = document.querySelector(".purchase_btn");
@@ -145,15 +142,14 @@ modal_purchaseBtn.textContent = "구매하기";
 const modal_page = document.querySelector(".purchase_modal");
 modal_page.appendChild(modal_purchaseBtn);
 
-//구매하기 버튼 클릭 시 장바구니 페이지로 돌아가기
+//구매하기 버튼 클릭 시 (구매완료 모달을 띄운 뒤, 해당 상품은 삭제후) 장바구니 페이지로 돌아가기
 const checkoutModal = document.querySelector(".purchase_button");
-const modalBtnClickHandler = () => {
-  alert("구매가 완료되었습니다.");
-  window.location.href = "cart.html";
-};
-checkoutModal.addEventListener("click", modalBtnClickHandler);
-
-
+checkoutModal.addEventListener("click", () => {
+  cartList = cartList.filter(product => !checkedProduct.includes(product));
+  localStorage.setItem('cartList', JSON.stringify(cartList));
+  alert('구매가 완료되었습니다.');
+  location.href = location.href;
+})
 
 
 
