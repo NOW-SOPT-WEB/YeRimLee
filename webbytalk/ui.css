@@ -5,7 +5,7 @@
 .menu-item {
     width: 25%;
     /* flex-grow: 1; width 방법을 선택한 이유, 인터넷 익스플로러에서는 플렉스 그로우에 애니메이션이 안먹는다. */
-    background: beige;
+    background: #BACD92;
     transition: 0.5s;
 }
 
@@ -13,7 +13,7 @@
 .menu-item:hover {
     width: 35%;
     /* flex-grow: 1.5; */
-    background: gold;
+    background: #75A47F
 }
 
 .menu-link {
@@ -31,4 +31,25 @@
 
 .menu-link:hover {
     color: white;
+}
+
+
+/* search */
+.search-form{
+    display: flex;
+    height: 40px;
+}
+.search-form input[type="search"] {
+    flex: 1;
+    margin-right: 10px;
+    border: 0;
+    border-radius: 0.3em;
+    font-size: 1rem;
+}
+.search-form input[type="submit"] {
+    width: 4em;
+    border: 0;
+    border-radius: 0.3em;
+    font-size: 1rem;
+    background-color: #BACD92;
 }
