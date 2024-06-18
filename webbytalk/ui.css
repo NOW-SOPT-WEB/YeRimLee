@@ -89,3 +89,15 @@ em: 현재 이 유저 아이템의 폰트 사이즈를 기준으로 */
     background-position: center;
     background-size: cover;
 }
+
+/* friend list */
+.friend-item {
+    align-items: center;
+}
+.user-name {
+    /* 아래의 3개는 문장이 줄넘김이 안되고 말줄임표 처리가 된다.  */
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+
+}
