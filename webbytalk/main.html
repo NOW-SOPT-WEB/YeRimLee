@@ -1,81 +1,100 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CSS FLEX</title>
-    <link rel="stylesheet" href="default.css">
-    <link rel="stylesheet" href="ui.css"> 
-</head>
-<body>
+    <link rel="stylesheet" href="default.css" />
+    <link rel="stylesheet" href="ui.css" />
+  </head>
+  <body>
     <!-- 헤더영역 -->
     <ul class="menu">
-        <li class="menu-item"><a href="#" class="menu-link">Home</a> </li>
-        <li class="menu-item"><a href="#" class="menu-link">About</a> </li>
-        <li class="menu-item"><a href="#" class="menu-link">Product</a> </li>
-        <li class="menu-item"><a href="#" class="menu-link">Contact</a> </li>
+      <li class="menu-item"><a href="#" class="menu-link">Home</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">About</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Product</a></li>
+      <li class="menu-item"><a href="#" class="menu-link">Contact</a></li>
     </ul>
     <!-- 검색창 영역 -->
-     <form class="search-form">
-        <!-- 모바일 기기에서 눌렀을 때 검색버튼이 활성화되는 경우(가상키보드) input type을 search로 한 경우에 그렇게 된다.  -->
-        <input type = "search">
-        <input type = "submit" value="찾기">
-     </form>
+    <form class="search-form">
+      <!-- 모바일 기기에서 눌렀을 때 검색버튼이 활성화되는 경우(가상키보드) input type을 search로 한 경우에 그렇게 된다.  -->
+      <input type="search" />
+      <input type="submit" value="찾기" />
+    </form>
     <!-- 불릿 리스트 영역 -->
-     <ul class="info-list">
-        <li class="info-list-item">You just get my heart pump, pumping
-            Every time that you're here around me
-            노랫 소리가 또 흘러나와, yeah (yeah)
-            오늘 오래 걸린 이유
-            I'm always so excited to meet you
-            내 향기가 널 먼저 찾아가, yeah (먼저 찾아가, yeah)</li>
-        <li class="info-list-item">눈 감아도 기억나게, 어디라도 따라갈래
-            You're so delicate, 거품 속에 숨었네, uh-uh-uh-uh-uh
-            Oh, you make my heart melt away, you're a softie, 구름 같아
-            이건 말로 설명 못해, you got me, oh-oh-oh-oh-oh (oh!)
-            이미 우린 저기 멀리 높이 있는 풍선같이
-            Have you right here in a basket</li>
-        <li class="info-list-item">Oh, my baby, sweet like bubble gum
-             like ball</li>
-     </ul>
+    <ul class="info-list">
+      <li class="info-list-item">
+        You just get my heart pump, pumping Every time that you're here around
+        me 노랫 소리가 또 흘러나와, yeah (yeah) 오늘 오래 걸린 이유 I'm always
+        so excited to meet you 내 향기가 널 먼저 찾아가, yeah (먼저 찾아가,
+        yeah)
+      </li>
+      <li class="info-list-item">
+        눈 감아도 기억나게, 어디라도 따라갈래 You're so delicate, 거품 속에
+        숨었네, uh-uh-uh-uh-uh Oh, you make my heart melt away, you're a softie,
+        구름 같아 이건 말로 설명 못해, you got me, oh-oh-oh-oh-oh (oh!) 이미
+        우린 저기 멀리 높이 있는 풍선같이 Have you right here in a basket
+      </li>
+      <li class="info-list-item">
+        Oh, my baby, sweet like bubble gum like ball
+      </li>
+    </ul>
     <!-- 메시지 리스트 -->
-     <ul class="user-list message-list">
-        <li class="user-item message-item">
-            <!-- 이미지 태그가 아닌 figure태그의 배경으로 이미지 삽입, 
+    <ul class="user-list message-list">
+      <li class="user-item message-item">
+        <!-- 이미지 태그가 아닌 figure태그의 배경으로 이미지 삽입, 
             why? -> 이미지의 크기가 제각각인 경우 각각 맞추는 것보다 이렇게 하는 것이 간편  -->
-            <figure class="user-photo" style="background-image: url(images/포에버웹.jpeg);"></figure>
-            <p class="message-content" >내가 힘들 때, 울 것 같을 때
-                기운도 이젠 나지 않을 때
-                (It's you) 날 걱정하네, (it's you) 날 웃게하네
-                말 안 해도 돼, boy, what do you say?</p >
-            <figure class="user-photo" style="background-image: url(images/포에버웹.jpeg);"></figure>
-            <p class="message-content">멀리든 언제든지 달려와
-                (They keep on asking me, "who is he?")
-                바쁜 척도 없이 넌 나타나
-                (They keep on asking me, "who is he?")
-                "이게 말이 되니?" 난 물어봐
-                (They keep on asking me, "who is he?")
-                너는 말야, he's the one that's living in my system, baby</p >
-            <figure class="user-photo" style="background-image: url(images/포에버웹.jpeg);"></figure>
-            <p class="message-content">Oh my, oh my God! 예상했어 나
-                I was really hoping that he will come through
-                Oh my, oh my God! 단 너뿐이야
-                Asking all the time about what I should do</p>
-        </li>
-     </ul>
-     <!-- 유저리스트 영역 -->
-     <ul class="user-list friend-list">
-        <li class="user-item friend-item">
-            <figure class="user-photo" style="background-image: url(images/포에버웹.jpeg);"></figure>
-            <p class="user-name">웨비 대장 이재훈</p >
-            <figure class="user-photo" style="background-image: url(images/포에버웹.jpeg);"></figure>
-            <p class="message-content">자드가자 스터디 스장 장정안</p >
-            <figure class="user-photo" style="background-image: url(images/포에버웹.jpeg);"></figure>
-            <p class="message-content">일주차 금잔디 리드 윤서진</p >
-        </li>
-     </ul>
-     <!-- 모달 영역 -->
-    <div class="modal">
+        <figure
+          class="user-photo"
+          style="background-image: url(images/포에버웹.jpeg)"
+        ></figure>
+        <p class="message-content">
+          내가 힘들 때, 울 것 같을 때 기운도 이젠 나지 않을 때 (It's you) 날
+          걱정하네, (it's you) 날 웃게하네 말 안 해도 돼, boy, what do you say?
+        </p>
+        <figure
+          class="user-photo"
+          style="background-image: url(images/포에버웹.jpeg)"
+        ></figure>
+        <p class="message-content">
+          멀리든 언제든지 달려와 (They keep on asking me, "who is he?") 바쁜
+          척도 없이 넌 나타나 (They keep on asking me, "who is he?") "이게 말이
+          되니?" 난 물어봐 (They keep on asking me, "who is he?") 너는 말야,
+          he's the one that's living in my system, baby
+        </p>
+        <figure
+          class="user-photo"
+          style="background-image: url(images/포에버웹.jpeg)"
+        ></figure>
+        <p class="message-content">
+          Oh my, oh my God! 예상했어 나 I was really hoping that he will come
+          through Oh my, oh my God! 단 너뿐이야 Asking all the time about what I
+          should do
+        </p>
+      </li>
+    </ul>
+    <!-- 유저리스트 영역 -->
+    <ul class="user-list friend-list">
+      <li class="user-item friend-item">
+        <figure
+          class="user-photo"
+          style="background-image: url(images/포에버웹.jpeg)"
+        ></figure>
+        <p class="user-name">웨비 대장 이재훈</p>
+        <figure
+          class="user-photo"
+          style="background-image: url(images/포에버웹.jpeg)"
+        ></figure>
+        <p class="message-content">자드가자 스터디 스장 장정안</p>
+        <figure
+          class="user-photo"
+          style="background-image: url(images/포에버웹.jpeg)"
+        ></figure>
+        <p class="message-content">일주차 금잔디 리드 윤서진</p>
+      </li>
+    </ul>
+    <!-- 모달 영역 -->
+    <!-- <div class="modal">
         <div class="dialog">
             사건은 다가와 ah, oh, ayy
             거세게 커져가 ah, oh, ayy
@@ -84,6 +103,110 @@
             감히 건드리지 못할 걸 (누구도 말이야)
             지금 내 안에선 숭숭숭 숭퍼노바
         </div>
+    </div> -->
+    <!-- 카드 리스트 영역 -->
+    <div class="card-list-con">
+      <ul class="card-list">
+        <li class="card-item">
+          <figure
+            class="card-image"
+            style="background-image: url(images/포에버웹.jpeg)"
+          >
+            <img src="images/ilbuni.png" alt="일분이" />
+          </figure>
+          <div class="card-desc">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic,
+            perferendis? dolor sit, amet consectetur adipisicing elit. Hic,
+            perferendis?
+          </div>
+        </li>
+        <li class="card-item">
+          <figure
+            class="card-image"
+            style="background-image: url(images/포에버웹.jpeg)"
+          >
+            <img src="images/ilbuni.png" alt="일분이" />
+          </figure>
+          <div class="card-desc">Lorem ipsum.</div>
+        </li>
+        <li class="card-item">
+          <figure
+            class="card-image"
+            style="background-image: url(images/포에버웹.jpeg)"
+          >
+            <img src="images/ilbuni.png" alt="일분이" />
+          </figure>
+          <div class="card-desc">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Enim
+            impedit odio expedita pariatur architecto molestias recusandae quam
+            distinctio! Nemo sapiente laborum fugit adipisci reiciendis eos in
+            eveniet dicta iure unde vel beatae nihil sit necessitatibus
+            similique perspiciatis saepe aperiam, expedita laudantium
+            consequatur? Blanditiis, rem exercitationem. Exercitationem odio
+            aliquam distinctio unde?
+          </div>
+        </li>
+        <li class="card-item">
+          <figure
+            class="card-image"
+            style="background-image: url(images/포에버웹.jpeg)"
+          >
+            <img src="images/ilbuni.png" alt="일분이" />
+          </figure>
+          <div class="card-desc">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic,
+            perferendis?
+          </div>
+        </li>
+        <li class="card-item">
+          <figure
+            class="card-image"
+            style="background-image: url(images/포에버웹.jpeg)"
+          >
+            <img src="images/ilbuni.png" alt="일분이" />
+          </figure>
+          <div class="card-desc">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic,
+            perferendis?
+          </div>
+        </li>
+        <li class="card-item">
+          <figure
+            class="card-image"
+            style="background-image: url(images/포에버웹.jpeg)"
+          >
+            <img src="images/ilbuni.png" alt="일분이" />
+          </figure>
+          <div class="card-desc">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic,
+            perferendis?
+          </div>
+        </li>
+        <li class="card-item">
+          <figure
+            class="card-image"
+            style="background-image: url(images/포에버웹.jpeg)"
+          >
+            <img src="images/ilbuni.png" alt="일분이" />
+          </figure>
+          <div class="card-desc">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic,
+            perferendis?
+          </div>
+        </li>
+        <li class="card-item">
+          <figure
+            class="card-image"
+            style="background-image: url(images/포에버웹.jpeg)"
+          >
+            <img src="images/ilbuni.png" alt="일분이" />
+          </figure>
+          <div class="card-desc">
+            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Hic,
+            perferendis?
+          </div>
+        </li>
+      </ul>
     </div>
-</body>
+  </body>
 </html>
