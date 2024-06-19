@@ -100,23 +100,23 @@ em: 현재 이 유저 아이템의 폰트 사이즈를 기준으로 */
 }
 
 /* modal */
-/* .modal {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: fixed;
-    left: 0;
-    right: 0;
-    top: 0;
-    bottom: 0;
-    background-color:  rgba(0, 0, 0, 0.3);
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
 }
 .dialog {
-    width: 50vw;
-    padding: 2em;
-    border-radius: 1em;
-    background: white;
-} */
+  width: 50vw;
+  padding: 2em;
+  border-radius: 1em;
+  background: white;
+}
 
 /* card list */
 .card-list-con {

@@ -1,0 +1,77 @@
+.header {
+  display: flex;
+  align-items: center;
+  height: 80px;
+  padding: 0 1rem;
+}
+
+.search-form {
+  /* 오른쪽 여백없이 꽉채우기 */
+  margin-left: auto;
+  margin-right: 3rem;
+  width: 300px;
+  /* 헤더 타이틀 침범하지 않도록 */
+  max-width: 40%;
+}
+
+.primary {
+  padding: 1rem;
+}
+
+.secondary {
+  padding: 1rem;
+}
+.secondary-a {
+  background: white;
+}
+
+.secondary-b {
+  color: white;
+  background: #666;
+}
+
+.footer {
+  padding: 1rem;
+  text-align: center;
+}
+
+.modal {
+  display: none;
+  top: 80px;
+}
+
+#modal-switch {
+  font-size: 2rem;
+}
+
+#modal-switch:checked ~ .modal {
+  display: flex;
+}
+
+label[for="modal-switch"] {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  /* background: red; */
+}
+
+label[for="modal-switch"]:before {
+  content: "🍀";
+  font-size: 2rem;
+}
+
+#modal-switch,
+label[for="modal-switch"] span {
+  /* 스크린리더, SEO 등의 이유로 display: none; 이나 width: 0;등의 사용은 지양하는 것이 좋다. */
+  overflow: hidden;
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  top: 0;
+}
