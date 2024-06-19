@@ -1,0 +1,178 @@
+/* rem: root element인 HTML 폰트 사이즈의 1.5배
+em: 현재 이 유저 아이템의 폰트 사이즈를 기준으로 */
+
+/* menu */
+.menu {
+  display: flex;
+}
+.menu-item {
+  width: 25%;
+  /* flex-grow: 1; width 방법을 선택한 이유, 인터넷 익스플로러에서는 플렉스 그로우에 애니메이션이 안먹는다. */
+  background: #bacd92;
+  transition: 0.5s;
+}
+
+/* 이거 한번에 못적나... */
+.menu-item:hover {
+  width: 35%;
+  /* flex-grow: 1.5; */
+  background: #75a47f;
+}
+
+.menu-link {
+  /* 텍스트 이외의 영역을 클릭해도 손가락 표시 생기게 */
+  display: block;
+  /* 현재 폰트 사이즈만큼 패딩을 준다 */
+  padding: 1em;
+  /* 루트 요소꺼 쓰겠다 */
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: black;
+  text-decoration: none;
+  text-align: center;
+}
+
+.menu-link:hover {
+  color: white;
+}
+
+/* search */
+.search-form {
+  display: flex;
+  height: 40px;
+}
+.search-form input[type="search"] {
+  flex: 1;
+  min-width: 0;
+  margin-right: 10px;
+  border: 0;
+  border-radius: 0.3em;
+  font-size: 1rem;
+}
+.search-form input[type="submit"] {
+  width: 4em;
+  border: 0;
+  border-radius: 0.3em;
+  font-size: 1rem;
+  background-color: #bacd92;
+}
+
+/* bullet list */
+/* 가상 element before */
+.info-list {
+  margin-bottom: 2rem;
+}
+.info-list-item {
+  display: flex;
+  /* 위 아래 마진값만 설정 */
+  margin: 0.5em 0;
+}
+
+.info-list-item:before {
+  /* 클로버랑 줄글을 flex로 설정하면 자동 들여쓰기에 용이하다. */
+  content: "🍀";
+  margin-right: 0.5em;
+}
+
+/* message */
+.user-list {
+  margin-bottom: 2rem;
+}
+.user-item {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  margin-top: 1.5em;
+}
+.user-photo {
+  flex-shrink: 0;
+  width: 50px;
+  height: 50px;
+  margin-right: 0.5em;
+  border: 2px solid beige;
+  border-radius: 50%;
+  background-color: #75a47f;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+/* friend list */
+.friend-item {
+  align-items: center;
+}
+.user-name {
+  /* 아래의 3개는 문장이 줄넘김이 안되고 말줄임표 처리가 된다.  */
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* modal */
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.3);
+}
+.dialog {
+  width: 50vw;
+  padding: 2em;
+  border-radius: 1em;
+  background: white;
+}
+
+/* card list */
+/* .card-list-con {
+    가로스크롤 방지
+    overflow: hidden;
+  } */
+.card-item {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+}
+.card-image {
+  /* 폭에따른 반응형 웹을 간단하게 만드는 방법 
+      패딩에서 100%는 콘텐츠가 최대한 늘어날 수 있는 폭을 의미 이것이 100%이고
+      패딩을 기준으로 바닥 패딩을 60%로 잡았다(가로:100 -> 세로:60)
+      폭에따른 세로가 유동적으로 반응하기 위해 */
+  height: 0;
+  padding-bottom: 60%;
+  background-color: lightgray;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.card-image img {
+  display: none;
+}
+.card-desc {
+  flex: 1 1 auto;
+  padding: 1em;
+  background: white;
+}
+
+@media (min-width: 600px) {
+  .card-list {
+    display: flex;
+    flex-wrap: wrap;
+    /* 열에 애매하게 아이템들어가면 가운데가 텅 비는 이슈justify-content: space-between; */
+    margin: 0 -1rem;
+  }
+  .card-item {
+    width: 50%;
+    padding: 0 1rem;
+  }
+}
+
+@media (min-width: 1200px) {
+  .card-item {
+    width: 33.33333%;
+  }
+}
