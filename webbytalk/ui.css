@@ -43,6 +43,7 @@ em: 현재 이 유저 아이템의 폰트 사이즈를 기준으로 */
 }
 .search-form input[type="search"] {
   flex: 1;
+  min-width: 0;
   margin-right: 10px;
   border: 0;
   border-radius: 0.3em;
@@ -58,6 +59,9 @@ em: 현재 이 유저 아이템의 폰트 사이즈를 기준으로 */
 
 /* bullet list */
 /* 가상 element before */
+.info-list {
+  margin-bottom: 2rem;
+}
 .info-list-item {
   display: flex;
   /* 위 아래 마진값만 설정 */
@@ -71,8 +75,13 @@ em: 현재 이 유저 아이템의 폰트 사이즈를 기준으로 */
 }
 
 /* message */
+.user-list {
+  margin-bottom: 2rem;
+}
 .user-item {
   display: flex;
+  flex-direction: column;
+  gap: 1em;
   margin-top: 1.5em;
 }
 .user-photo {
@@ -119,10 +128,10 @@ em: 현재 이 유저 아이템의 폰트 사이즈를 기준으로 */
 }
 
 /* card list */
-.card-list-con {
-  /* 가로스크롤 방지 */
+/* .card-list-con {
+  가로스크롤 방지
   overflow: hidden;
-}
+} */
 .card-item {
   display: flex;
   flex-direction: column;
@@ -164,6 +173,6 @@ em: 현재 이 유저 아이템의 폰트 사이즈를 기준으로 */
 
 @media (min-width: 1200px) {
   .card-item {
-    width: 30%;
+    width: 33.33333%;
   }
 }
